@@ -12,11 +12,21 @@ def get():
 
 #mock data for testing
 @app.route('/get_mock', methods=['GET'])
-def get_mock():
-    return jsonify({
-        "name": "John",
-        "age": 30
-    })
+def get_mock(user_id):
+    #create a dictionary
+    mock_data = {
+        "user_id": user_id,
+        "name": "John Doe",
+        "age": 30,
+        "email": "john.doe@example.com"
+    }
+    
+    extra = request.args.get('extra')
+    if extra:
+        mock_data['extra'] = extra
+      
+    #jsonify the dictionary and pass status code 
+    return jsonify(mock_data), 200
 
 @app.route('/post', methods=['POST'])
 def post():
