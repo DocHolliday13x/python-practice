@@ -12,10 +12,10 @@ def get():
 
 #mock data for testing
 @app.route('/get_mock', methods=['GET'])
-def get_mock(user_id):
+def get_mock():
     #create a dictionary
     mock_data = {
-        "user_id": user_id,
+        "user_id": 1,
         "name": "John Doe",
         "age": 30,
         "email": "john.doe@example.com"
