@@ -10,6 +10,14 @@ def home():
 def get():
     return "Get Request"
 
+#mock data for testing
+@app.route('/get_mock', methods=['GET'])
+def get_mock():
+    return jsonify({
+        "name": "John",
+        "age": 30
+    })
+
 @app.route('/post', methods=['POST'])
 def post():
     return "Post Request"
