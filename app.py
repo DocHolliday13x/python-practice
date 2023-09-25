@@ -19,24 +19,6 @@ def home():
 def get():
     return "Get Request"
 
-# #mock data for testing
-# @app.route('/get_mock', methods=['GET'])
-# def get_mock():
-#     #create a dictionary
-#     mock_data = {
-#         "user_id": 1,
-#         "name": "John Doe",
-#         "age": 30,
-#         "email": "john.doe@example.com"
-#     }
-    
-#     extra = request.args.get('extra')
-#     if extra:
-#         mock_data['extra'] = extra
-      
-#     #jsonify the dictionary and pass status code 
-#     return jsonify(mock_data), 200
-
 @app.route('/get_mock', methods=['GET'])
 def get_mock():
     extra = request.args.get('extra')
